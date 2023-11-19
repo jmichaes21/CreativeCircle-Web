@@ -1,7 +1,7 @@
 import React from 'react'
-import { feedback } from '../constants'
-import styles from '../style'
-import Feedback from './Feedback'
+import { feedback } from '../../constants'
+import styles from '../../style'
+import Feedback from '../Feedback'
 
 const Testimonials = () => {
   return (

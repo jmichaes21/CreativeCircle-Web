@@ -1,5 +1,5 @@
 import React from 'react'
-import { quotes } from '../assets'
+import { quotes } from '../../assets/images'
 
 const Feedback = ({ content, name, title, img }) => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { close, logo, menu } from '../assets'
+import { close, logo, menu } from '../../assets/images'
 import { navLinks } from '../../constants'
 
 // Navbar
