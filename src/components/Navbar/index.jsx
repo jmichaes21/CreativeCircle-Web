@@ -1,24 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { close, logo, menu } from '../../assets/images'
-import { navLinks } from '../../constants'
+import { getDatabase, ref, onValue } from "firebase/database";
 
 // Navbar
 
 const Navbar = () => {
+  const [navLinks, setnavLinks] = useState([]);
+
+  useEffect(() => {
+    const db = getDatabase();
+    const heroRef = ref(db, "navLinks/");
+    onValue(heroRef, (snapshot) => {
+      const data = snapshot.val();
+      setnavLinks(data);
+    });
+  }, []);
+
 
   const [toggle, setToggle] = useState(false)
 
   return (
     <nav className='w-full flex py-6 justify-between items-center navbar'>
-      <img src={logo} alt='hoobank' className='w-[124px] h-[32px]'/>
+      <img src={logo} alt='creative circle' className='w-[124px] h-[32px]'/>
       <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
-        {navLinks.map((nav, i) => (
+        {navLinks.map((item) => (
           <li 
-            key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${i === navLinks.length - 1 ? 'mr-0' : 'mr-10'} text-white mr-10`}
+            key={item.id}
+            className={`font-poppins font-normal cursor-pointer text-[16px]  text-white mr-10`}
           >
-            <a href={`#${nav.id}`}>
-              {nav.title}
+            <a href={`#${item.ref}`}>
+              {item.title}
             </a>
           </li>        
         ))}
@@ -32,13 +43,13 @@ const Navbar = () => {
         />
         <div className={`${toggle ? 'flex' : 'hidden'} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}>
           <ul className='list-none flex flex-col justify-end items-center flex-1'>
-            {navLinks.map((nav, i) => (
+            {navLinks.map((item) => (
               <li 
-                key={nav.id}
-                className={`font-poppins font-normal cursor-pointer text-[16px] ${i === navLinks.length - 1 ? 'mr-0' : 'mb-4'} text-white mr-10`}
+                key={item.id}
+                className={`font-poppins font-normal cursor-pointer text-[16px] text-white mr-10`}
               >
-                <a href={`#${nav.id}`}>
-                  {nav.title}
+                <a href={`#${item.id}`}>
+                  {item.title}
                 </a>
               </li>        
             ))}

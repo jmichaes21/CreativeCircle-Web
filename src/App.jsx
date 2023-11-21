@@ -1,16 +1,5 @@
 import React from 'react'
-// import { 
-//   Billing, 
-//   Business, 
-//   CardDeal, 
-//   Clients, 
-//   CTA, 
-//   Footer, 
-//   Hero, 
-//   Navbar, 
-//   Stats, 
-//   Testimonials 
-// } from './components'
+import "./config-firebase"
 import styles from './style'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
