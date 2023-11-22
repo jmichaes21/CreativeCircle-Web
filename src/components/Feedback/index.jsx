@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import { quotes } from '../../assets/images'
+import { getDatabase, ref, onValue} from "firebase/database"
 
 const Feedback = ({ content, name, title, img }) => {
+  // const [feedback, setFeedBack] = useState([]) 
+
+  // useEffect(() => {
+  //   const db = getDatabase();
+  //   const feedbackRef = ref(db, "feedback/");
+  //   onValue(feedbackRef, (snapshot) => {
+  //     const data = snapshot.val();
+  //     setFeedBack(data)
+  //   })
+  // })
+
+
   return (
-    <div className='flex justify-between flex-col px-10 py-12 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5 feedback-card'>
+    <div className='flex justify-between flex-col px-10 py-12 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5 feedback-card' f>
       <img
         src={quotes}
         alt='double-quotes'
