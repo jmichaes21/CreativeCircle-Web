@@ -26,7 +26,7 @@ const Clients = () => {
               src={item.logo}
               href={item.link}
               alt='client'
-              className='sm:w-[200px] w-[200px] object-contain'
+              className='sm:w-[200px] w-[200px] object-contain rounded-full'
             />   
             </a>
                     
