@@ -1,7 +1,12 @@
-import React from 'react'
-import { features } from '../../constants'
+import React, { useState, useEffect } from 'react'
+// import { features } from '../../constants'
 import styles, { layout } from '../../style'
 import Button from '../Button'
+import { getDatabase, ref, onValue } from "firebase/database";
+
+
+ 
+
 
 const FeatureCard = ({ icon, title, content, index }) => (
   <div className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? 'mb-6' : 'mb-0'} feature-card`}>
@@ -24,6 +29,16 @@ const FeatureCard = ({ icon, title, content, index }) => (
 )
 
 const   Business = () => {
+  const [features, setFeatures] = useState([]);
+
+  useEffect(() => {
+    const db = getDatabase();
+    const featuresRef = ref(db, "features/");
+    onValue(featuresRef, (snapshot) => {
+      const data = snapshot.val();
+      setFeatures(data);
+    });
+  }, []);
   return (
     <section id='features' className={layout.section}>
       <div className={layout.sectionInfo}>
@@ -38,8 +53,8 @@ const   Business = () => {
         <Button styles='mt-10'/>
       </div>
       <div className={`${layout.sectionImg} flex-col`}>
-        {features.map((feature, index) => (
-          <FeatureCard key={feature.id} {...feature} index={index}/>
+        {features.map((item) => (
+          <FeatureCard key={item.id} {...item}/>
         ))}
       </div>
     </section>
