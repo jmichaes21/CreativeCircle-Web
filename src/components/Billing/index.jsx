@@ -22,16 +22,22 @@ const Billing = () => {
           
         </p>
         <div className='flex flex-row flex-wrap sm:mt-10 mt-6'>
-          <img
-            src={apple}
-            alt='app-store'
-            className='w-[128px] h-[42px] object-contain mr-5 cursor-pointer'
-          />
-          <img
-            src={google}
-            alt='google-play'
-            className='w-[128px] h-[42px] object-contain cursor-pointer'
-          />
+          <a href="https://www.apple.com/id/app-store/">
+            <img
+              src={apple}
+              alt='app-store'
+              className='w-[128px] h-[42px] object-contain mr-5 cursor-pointer'
+            />
+          </a>
+          <a href="https://play.google.com/store/games?hl=id&gl=US&pli=1"> 
+            <img
+              src={google}
+              alt='google-play'
+              className='w-[128px] h-[42px] object-contain cursor-pointer'
+            /></a>
+
+          
+         
         </div>
       </div>  
     </section>

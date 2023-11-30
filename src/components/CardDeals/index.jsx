@@ -11,7 +11,10 @@ const CardDeal = () => {
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
           Discuss the service you require from the designer, with build in communication tool.
         </p>
-        <Button styles='mt-10'/>
+        <a href="https://play.google.com/store/games?hl=id&gl=US&pli=1">
+          <Button styles='mt-10'/>
+        </a>
+        
       </div>
       <div className={layout.sectionImg}>
         <img
