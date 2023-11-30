@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from '../../style'
 import { logo } from '../../assets/images'
-import { footerLinks } from '../../constants'
+// import { footerLinks } from '../../constants'
 import { getDatabase, ref, onValue } from "firebase/database";
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
           </p>
         </div>
         <div className='flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10'>
-          {footerLinks.map((link) => (
+          {/* {footerLinks.map((link) => (
             <div key={link.title} className='flex flex-col ss:my-0 my-4 min-w-[150px]'>
               <h4 className='font-poppins font-medium text-[18px] leading-[27px] text-white'>
                 {link.title}
@@ -47,7 +47,7 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
       <div className='w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]'>
