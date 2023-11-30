@@ -14,7 +14,7 @@ const Footer = () => {
       const data = snapshot.val();
       setsocialMedia(data);
     })
-  })
+  }, [])
 
 
   return (
