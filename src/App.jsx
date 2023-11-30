@@ -8,9 +8,9 @@ import Business from './components/Business'
 import Billing from './components/Billing'
 import CardDeal from './components/CardDeals'
 import Testimonials from './components/Testimonials'
-import Clients from '.components/clients'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import Clients from './components/Clients'
 
 const App = () => {
   return (
